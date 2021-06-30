@@ -39,6 +39,8 @@
 
         document.querySelector('.patvirtinti').addEventListener('click', function () {
             var a, b, c, d, x1, x2; //D diskriminantas
+            var isvedimoElementas;
+            isvedimoElementas = document.querySelector(".rezultatas");
 
             //a yra elemento koa reiksme
             a = parseFloat(document.querySelector("#koa").value);
@@ -56,11 +58,13 @@
 
             if (a == 0 && b == 0 && c == 0) {
                 console.log("Visi koeficientai yra 0, del to lygties isspresti negalima")
+                isvedimoElementas.innerHTML = "Visi koeficientai yra 0, del to lygties isspresti negalima"
             } else {
                 if (d == 0) {
                     // x1 = -b/2a
                     x1 = -b/(2*a);
                     console.log(x1);
+                    isvedimoElementas.innerHTML = x1;
                 } else if (d > 0) {
                     // x1 = (-b + sqrt(d))/2a
                     // x2 = (-b - sqrt(d))/2a
@@ -68,10 +72,13 @@
                     x2 = (-b - Math.sqrt(d))/(2*a);
                     console.log(x1);
                     console.log(x2);
+                    isvedimoElementas.innerHTML = x1 + " " + x2;
                 } else if (d < 0) {
                     // realiuju sprendiniu nera
                     console.log("Realiuju sprendiniu nera");
+                    isvedimoElementas.innerHTML = "Realiuju sprendiniu nera";
                 }
+                console.log("d = " +d);
             }
 
 

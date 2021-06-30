@@ -12,6 +12,10 @@
             display: flex;
             flex-direction: column;
         }
+        img {
+            width: 200px;
+            height: 100px;
+        }
     </style>
 </head>
 
@@ -19,6 +23,8 @@
     <div class="container">
         <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f4a6959a9421eca9a791bfd0fcb4798aca6143f7">
         <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e6b09338755ae21945fb6ad44abb8da0e366f39f">
+        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c0b979a1ce5ac7dcee668fd3d5c9dd7530c41e17">
+        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/242becca03d78726f8dec19bf48d0a31e3ca8fee">
         <label for="koa">Koeficientas a</label>
         <input placeholder="a" type="text" name="koa" id="koa" />
         <label for="kob">Koeficientas b</label>
@@ -79,6 +85,8 @@
                     isvedimoElementas.innerHTML = "Realiuju sprendiniu nera";
                 }
                 console.log("d = " +d);
+
+                // isvedimoElementas.innerHTML += "Diskriminantas " + d;
             }
 
 

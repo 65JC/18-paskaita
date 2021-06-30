@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24h Laikrodis</title>
+
+    <style>
+        body {
+            max-width: 1920px;
+            margin: auto;
+        }
+        .laikrodis {
+            display: flex;
+            justify-content: center;
+            margin-top: 40vh;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="laikrodis">
+
+    </div>
+    <script>
+        "use strict";
+
+        setInterval(function () {
+            // console.log("labas");
+
+            var isvedimoElementas = document.querySelector(".laikrodis");
+        var siosDienosData = new Date();
+        // console.log(siosDienosData);
+
+        var vakarasRytas = "AM";
+        var h = siosDienosData.getHours();
+        var m = siosDienosData.getMinutes();
+        var s = siosDienosData.getSeconds();
+        // var h = 0;
+        // var m = 0;
+        // var s = 1;
+
+        if (h == 12) {
+            vakarasRytas = "PM";
+        }
+
+        if (h == 0) {
+            h = 12;
+        }
+
+        if (h > 12) {
+            h = h - 12;
+            vakarasRytas = "PM";
+        }
+
+        if (h < 10) {
+            h = "0" + h;
+        }
+        if (m < 10) {
+            m = "0" + m;
+        }
+        if (s < 10) {
+            s = "0" + s;
+        }
+
+        isvedimoElementas.innerHTML = h + " : " + m + " : " + s + " " + vakarasRytas;
+        console.log(h);
+        console.log(m);
+        console.log(s);
+
+
+
+
+        }, 1000) //milisekundėmis 1000ms = 1s
+
+
+
+    </script>
+</body>
+
+</html>

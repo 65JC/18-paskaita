@@ -12,6 +12,7 @@
             max-width: 1920px;
             margin: auto;
         }
+
         .laikrodis {
             display: flex;
             justify-content: center;
@@ -32,44 +33,75 @@
             // console.log("labas");
 
             var isvedimoElementas = document.querySelector(".laikrodis");
-        var siosDienosData = new Date();
-        // console.log(siosDienosData);
+            var siosDienosData = new Date();
+            // console.log(siosDienosData);
 
-        var vakarasRytas = "AM";
-        var h = siosDienosData.getHours();
-        var m = siosDienosData.getMinutes();
-        var s = siosDienosData.getSeconds();
-        // var h = 0;
-        // var m = 0;
-        // var s = 1;
+            var vakarasRytas = "AM";
+            var h = siosDienosData.getHours();
+            var m = siosDienosData.getMinutes();
+            var s = siosDienosData.getSeconds();
 
-        if (h == 12) {
-            vakarasRytas = "PM";
-        }
+            var diena = siosDienosData.getDay(); //0-6
+            var laikrodzioDiena = "Pirmadienis";
 
-        if (h == 0) {
-            h = 12;
-        }
+            switch (diena) {
+                // case "Sunday":
+                case 0:
+                    laikrodzioDiena = "Sekmadienis";
+                    break;
+                case 1:
+                    laikrodzioDiena = "Pirmadienis";
+                    break;
+                case 2:
+                    laikrodzioDiena = "Antradienis";
+                    break;
+                case 3:
+                    laikrodzioDiena = "Treciadienis";
+                    break;
+                case 4:
+                    laikrodzioDiena = "Ketvirtadienis";
+                    break;
+                case 5:
+                    laikrodzioDiena = "Penktadienis";
+                    break;
+                case 6:
+                    laikrodzioDiena = "Sestadiedienis";
+                    break;
+                default:
+                    console.log("Tokios dienos nera");
+            }
 
-        if (h > 12) {
-            h = h - 12;
-            vakarasRytas = "PM";
-        }
+            // var h = 0;
+            // var m = 0;
+            // var s = 1;
 
-        if (h < 10) {
-            h = "0" + h;
-        }
-        if (m < 10) {
-            m = "0" + m;
-        }
-        if (s < 10) {
-            s = "0" + s;
-        }
+            if (h == 12) {
+                vakarasRytas = "PM";
+            }
 
-        isvedimoElementas.innerHTML = h + " : " + m + " : " + s + " " + vakarasRytas;
-        console.log(h);
-        console.log(m);
-        console.log(s);
+            if (h == 0) {
+                h = 12;
+            }
+
+            if (h > 12) {
+                h = h - 12;
+                vakarasRytas = "PM";
+            }
+
+            if (h < 10) {
+                h = "0" + h;
+            }
+            if (m < 10) {
+                m = "0" + m;
+            }
+            if (s < 10) {
+                s = "0" + s;
+            }
+
+            isvedimoElementas.innerHTML = h + " : " + m + " : " + s + " " + vakarasRytas + " " + laikrodzioDiena;
+            console.log(h);
+            console.log(m);
+            console.log(s);
 
 
 
